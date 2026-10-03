@@ -3,64 +3,109 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AVIELLE | Premium Collection</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AVIELLE | The Premium Collection</title>
 <style>
+:root{--cream:#f8f5ef;--paper:#fffdf9;--ink:#302319;--muted:#8d8175;--gold:#a7835e;--line:#e9e0d5}
 *{box-sizing:border-box}
-body{margin:0;background:#faf8f4;color:#29251f;font-family:Arial,sans-serif}
-header{text-align:center;background:#fff;padding:30px 15px;border-bottom:1px solid #e9e1d7}
-.logo{font-family:Georgia,serif;font-size:34px;letter-spacing:7px;margin:0}
-.tagline{font-size:11px;letter-spacing:4px;color:#9b8063;margin-top:9px}
-.hero{text-align:center;padding:35px 15px 22px}
-.hero h1{font-family:Georgia,serif;font-weight:400;font-size:29px;margin:0 0 10px}
-.hero p{color:#81776c;font-size:14px}
-.filters{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;padding:10px 15px 28px}
-.filters button{border:1px solid #b9a58e;background:transparent;color:#493b2c;padding:11px 23px;border-radius:30px;cursor:pointer;font-size:13px}
-.filters button.active,.filters button:hover{background:#30271e;color:white;border-color:#30271e}
-.products{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;max-width:1100px;margin:auto;padding:0 20px 55px}
-.card{background:white;border:1px solid #eee8df;overflow:hidden}
-.card img{width:100%;aspect-ratio:4/5;object-fit:contain;background:#f7f5f1;display:block}
-.details{padding:16px}
-.category{font-size:10px;letter-spacing:2px;color:#a18461;text-transform:uppercase}
-.name{font-family:Georgia,serif;font-size:18px;line-height:1.35;margin:9px 0}
-.price{font-size:17px;font-weight:bold}
-.old{font-size:13px;color:#999;text-decoration:line-through;margin-left:7px;font-weight:normal}
-.save{font-size:11px;color:#7c765f;margin-top:6px}
-.order{display:block;text-align:center;text-decoration:none;background:#30271e;color:#fff;padding:12px;margin-top:16px;font-size:12px;letter-spacing:1px}
-footer{text-align:center;background:#30271e;color:#eee;padding:28px 15px;font-size:12px;line-height:1.8}
-footer strong{font-family:Georgia,serif;letter-spacing:4px;font-size:20px}
-@media(max-width:700px){.products{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;padding:0 10px 35px}.details{padding:11px}.name{font-size:15px}.price{font-size:14px}.old{font-size:11px}.logo{font-size:29px}}
-@media(max-width:390px){.products{grid-template-columns:1fr}.card img{aspect-ratio:1/1}}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:Arial,sans-serif}
+header{height:82px;background:var(--paper);display:flex;align-items:center;justify-content:space-between;padding:0 6%;border-bottom:1px solid var(--line)}
+.brand{font-family:Georgia,serif;font-size:30px;letter-spacing:8px;text-decoration:none;color:var(--ink)}
+.brand small{display:block;text-align:center;font:8px Arial;letter-spacing:4px;margin-top:5px}
+nav{display:flex;align-items:center;gap:30px}
+nav a{font-size:12px;color:var(--ink);text-decoration:none}
+.nav-cta,.cta{background:var(--ink);color:white!important;text-decoration:none;border-radius:30px;padding:13px 21px;font-size:12px;letter-spacing:.5px}
+.hero{min-height:390px;display:flex;align-items:center;padding:65px 8%;background:linear-gradient(90deg,#f5eee5 0%,#f5eee5ed 38%,#f5eee566 70%,#f5eee522 100%),url("bedsheet_photo_20.png") center 48%/cover}
+.hero-content{max-width:490px}
+.eyebrow{font-size:10px;letter-spacing:4px;color:var(--gold);text-transform:uppercase}
+.hero h1{font:normal clamp(42px,6vw,72px)/.98 Georgia,serif;margin:20px 0}
+.hero p{color:#71675e;font-size:14px;line-height:1.8;max-width:370px;margin-bottom:27px}
+.benefits{display:flex;gap:25px;flex-wrap:wrap;margin-top:35px;font-size:11px;color:#615448}
+.benefits span{border-left:1px solid #bda990;padding-left:12px}
+.section{max-width:1250px;margin:auto;padding:45px 25px}
+.filterbar{display:flex;justify-content:center;gap:9px;margin:0 auto 42px;flex-wrap:wrap}
+.filterbar button{border:1px solid #d9cbb9;border-radius:30px;background:transparent;color:var(--ink);padding:12px 25px;cursor:pointer;font-size:12px}
+.filterbar button.active{background:var(--ink);color:white}
+.heading{display:flex;justify-content:space-between;align-items:end;margin-bottom:22px}
+.heading h2{font:normal 35px Georgia,serif;margin:0}
+.heading p{color:var(--muted);font-size:12px;margin:8px 0 0}
+.products{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:7px;overflow:hidden;transition:transform .25s,box-shadow .25s}
+.card:hover{transform:translateY(-4px);box-shadow:0 12px 30px #35261712}
+.photo{position:relative;background:#f0ece5}
+.photo img{display:block;width:100%;aspect-ratio:4/4.5;object-fit:contain}
+.tag{position:absolute;top:12px;left:12px;background:#fffdf0e8;color:#6e5438;padding:7px 9px;font-size:9px;letter-spacing:1px;text-transform:uppercase}
+.details{padding:15px}
+.type{font-size:9px;letter-spacing:2px;color:var(--gold);text-transform:uppercase}
+.name{font:normal 17px/1.35 Georgia,serif;margin:8px 0;min-height:42px}
+.prices{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:12px 0}
+.current{font-size:18px;font-weight:bold}
+.old{font-size:12px;color:#a59b91;text-decoration:line-through}
+.discount{font-size:10px;background:#f4e5df;color:#8b4537;padding:5px 7px}
+.order{display:block;text-align:center;border:1px solid var(--ink);color:var(--ink);text-decoration:none;padding:12px 8px;font-size:10px;letter-spacing:1px;border-radius:3px;transition:.2s}
+.order:hover{background:var(--ink);color:white}
+.feature-strip{background:var(--ink);color:#f6eee3;display:flex;justify-content:center;gap:60px;flex-wrap:wrap;padding:27px 15px;font-size:11px;letter-spacing:.5px}
+footer{text-align:center;padding:35px 15px;background:var(--paper);border-top:1px solid var(--line)}
+footer .brand{display:inline-block;margin-bottom:18px}
+footer p{font-size:11px;color:var(--muted);line-height:2}
+footer a{color:var(--ink);text-decoration:none;margin:0 10px;font-size:11px}
+@media(max-width:850px){.products{grid-template-columns:repeat(3,minmax(0,1fr))}nav{gap:13px}}
+@media(max-width:600px){header{height:70px;padding:0 15px}.brand{font-size:23px;letter-spacing:5px}nav a:not(.nav-cta){display:none}.nav-cta{padding:10px 13px;font-size:10px}.hero{min-height:370px;padding:40px 23px;background-position:58% center}.hero h1{font-size:48px}.section{padding:32px 12px}.heading h2{font-size:27px}.products{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.details{padding:11px}.name{font-size:15px;min-height:40px}.current{font-size:15px}.old{font-size:10px}.discount{font-size:9px}.order{font-size:9px;padding:11px 4px}.feature-strip{gap:18px;padding:23px 10px}.feature-strip span{font-size:10px}}
 </style>
 </head>
 <body>
 
 <header>
-<h1 class="logo">AVIELLE</h1>
-<div class="tagline">THE PREMIUM COLLECTION</div>
+<a class="brand" href="#">AVIELLE<small>THE PREMIUM COLLECTION</small></a>
+<nav>
+<a href="#">Home</a>
+<a href="#bedsheets" onclick="showCategory('bedsheets')">Bedsheets</a>
+<a href="#bags" onclick="showCategory('bags')">Bags</a>
+<a class="nav-cta" href="https://wa.me/918920973237" target="_blank">Chat with Us ↗</a>
+</nav>
 </header>
 
 <section class="hero">
-<h1>Elegance in Every Detail</h1>
-<p>Discover thoughtfully selected essentials for your lifestyle.</p>
+<div class="hero-content">
+<div class="eyebrow">Premium Living</div>
+<h1>Elegance<br>In Every Detail</h1>
+<p>Thoughtfully selected bedsheets and bags to bring comfort, style and sophistication to your everyday life.</p>
+<a class="cta" href="#collection">EXPLORE COLLECTION &nbsp; →</a>
+<div class="benefits"><span>Premium Quality</span><span>Pan India Shipping</span><span>Easy Ordering</span></div>
+</div>
 </section>
 
-<nav class="filters">
-<button class="active" onclick="filterProducts('all',this)">All Products</button>
-<button onclick="filterProducts('bedsheets',this)">Bedsheets</button>
-<button onclick="filterProducts('bags',this)">Bags</button>
-</nav>
+<section class="section" id="collection">
+<div class="filterbar">
+<button class="active" onclick="showCategory('all',this)">All Products</button>
+<button onclick="showCategory('bedsheets',this)">Bedsheets</button>
+<button onclick="showCategory('bags',this)">Bags</button>
+</div>
+<div class="heading">
+<div><h2 id="sectionTitle">The Collection</h2><p>Curated essentials for your everyday elegance.</p></div>
+</div>
+<div class="products" id="products"></div>
+</section>
 
-<main class="products" id="products"></main>
+<div class="feature-strip">
+<span>◇ &nbsp; Premium Quality</span>
+<span>▱ &nbsp; Pan India Shipping</span>
+<span>◉ &nbsp; Easy WhatsApp Ordering</span>
+<span>✧ &nbsp; Secure Enquiry</span>
+</div>
 
 <footer>
-<strong>AVIELLE</strong><br>
-Premium Products • Made for Everyday Elegance<br>
-Order on WhatsApp: +91 89209 73237
+<a class="brand" href="#">AVIELLE<small>THE PREMIUM COLLECTION</small></a>
+<p>Thoughtfully curated essentials.<br>For orders and enquiries, connect with us on WhatsApp.</p>
+<a href="#collection">Shop</a>
+<a href="#bedsheets">Bedsheets</a>
+<a href="#bags">Bags</a>
+<p>© 2026 AVIELLE. All rights reserved.</p>
 </footer>
 
 <script>
-const products = [
+const products=[
 {category:"bedsheets",name:"Avielle He & She Reversible Premium Bedsheets",old:3599,price:1299,image:"bedsheet_photo_16.png"},
 {category:"bedsheets",name:"Avielle Elite King Bedsheets",old:4399,price:849,image:"bedsheet_photo_17.png"},
 {category:"bedsheets",name:"Avielle Elite King Bedsheets",old:4399,price:849,image:"bedsheet_photo_18.png"},
@@ -70,7 +115,6 @@ const products = [
 {category:"bedsheets",name:"Avielle Velora 3pcs Bedsheet Set",old:4999,price:1299,image:"bedsheet_photo_22.png"},
 {category:"bedsheets",name:"Avielle Velora 3pcs Bedsheet Set",old:4999,price:1299,image:"bedsheet_photo_23.png"},
 {category:"bedsheets",name:"Avielle Velora 3pcs Bedsheet Set",old:4999,price:1299,image:"bedsheet_photo_24.png"},
-
 {category:"bags",name:"Korean Crescent Moon Bag",old:999,price:459,image:"item-1-1.png"},
 {category:"bags",name:"Cocoa Charm",old:1799,price:899,image:"item-2-1.png"},
 {category:"bags",name:"Monochrome Diamond",old:1799,price:1099,image:"item-3-1.png"},
@@ -79,29 +123,22 @@ const products = [
 {category:"bags",name:"Studded Bag",old:1499,price:950,image:"item-6-1.png"},
 {category:"bags",name:"Vintage Floral Embossed Bag",old:1999,price:1599,image:"item-7-1.png"}
 ];
-
 function render(category="all"){
 const area=document.getElementById("products");
 area.innerHTML="";
 products.filter(p=>category==="all"||p.category===category).forEach(p=>{
-const message=encodeURIComponent("Hi AVIELLE, I want to order: "+p.name+" | Price: ₹"+p.price);
+const message=encodeURIComponent("Hello AVIELLE! I would like to enquire about "+p.name+". Listed price: ₹"+p.price);
 const card=document.createElement("article");
 card.className="card";
-card.innerHTML=`
-<img src="${p.image}" alt="${p.name}" loading="lazy">
-<div class="details">
-<div class="category">${p.category}</div>
-<div class="name">${p.name}</div>
-<div class="price">₹${p.price.toLocaleString("en-IN")} <span class="old">₹${p.old.toLocaleString("en-IN")}</span></div>
-<div class="save">Special collection price</div>
-<a class="order" href="https://wa.me/918920973237?text=${message}" target="_blank" rel="noopener">ORDER ON WHATSAPP</a>
-</div>`;
+card.innerHTML=`<div class="photo"><span class="tag">${p.category==="bedsheets"?"Home Edit":"Style Edit"}</span><img src="${p.image}" alt="${p.name}" loading="lazy"></div><div class="details"><div class="type">${p.category}</div><div class="name">${p.name}</div><div class="prices"><span class="current">₹${p.price.toLocaleString("en-IN")}</span><span class="old">₹${p.old.toLocaleString("en-IN")}</span><span class="discount">SPECIAL PRICE</span></div><a class="order" href="https://wa.me/918920973237?text=${message}" target="_blank" rel="noopener">ENQUIRE NOW &nbsp; ↗</a></div>`;
 area.appendChild(card);
 });
+document.getElementById("sectionTitle").textContent=category==="all"?"The Collection":category==="bedsheets"?"Bedsheets Collection":"Bags Collection";
 }
-function filterProducts(category,button){
-document.querySelectorAll(".filters button").forEach(b=>b.classList.remove("active"));
-button.classList.add("active");
+function showCategory(category,button){
+document.querySelectorAll(".filterbar button").forEach(b=>b.classList.remove("active"));
+if(button)button.classList.add("active");
+else document.querySelectorAll(".filterbar button").forEach(b=>{if(b.textContent.toLowerCase()===category)b.classList.add("active")});
 render(category);
 }
 render();
