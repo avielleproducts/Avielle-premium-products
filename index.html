@@ -4,28 +4,199 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>AVIELLE | Premium Collection</title>
+
 <style>
 *{box-sizing:border-box}
-body{margin:0;background:#faf8f5;color:#29251f;font-family:Arial,sans-serif}
-header{background:#fff;padding:25px 15px;text-align:center;border-bottom:1px solid #eee}
-.logo{font-family:Georgia,serif;font-size:38px;letter-spacing:7px}
-.tagline{font-size:11px;letter-spacing:3px;color:#8b7762;margin-top:8px}
-.hero{text-align:center;padding:45px 15px 30px}
-.hero h1{font-family:Georgia,serif;font-weight:normal;font-size:30px}
-.hero p{color:#766f66;font-size:14px}
-.products{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;max-width:1100px;margin:auto;padding:20px}
-.card{background:#fff;border:1px solid #eee;padding:12px}
-.card img{width:100%;aspect-ratio:1/1;object-fit:contain;background:#f7f5f1}
-.name{font-family:Georgia,serif;font-size:17px;margin:13px 0 8px}
-.old{color:#999;text-decoration:line-through;font-size:13px}
-.price{font-size:20px;font-weight:bold;margin:5px 0 13px}
-.order{display:block;text-align:center;background:#29251f;color:white;text-decoration:none;padding:12px 8px;font-size:13px;letter-spacing:1px}
-footer{text-align:center;padding:35px 15px;color:#81786e;font-size:12px}
-@media(max-width:700px){.products{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;padding:10px}.card{padding:8px}.name{font-size:14px}.price{font-size:17px}.logo{font-size:31px}}
-@media(max-width:380px){.products{grid-template-columns:1fr}}
+
+body{
+margin:0;
+background:#faf8f4;
+color:#29251f;
+font-family:Arial,sans-serif;
+}
+
+header{
+background:#fff;
+text-align:center;
+padding:30px 15px 25px;
+border-bottom:1px solid #e9e1d7;
+}
+
+.logo{
+font-family:Georgia,serif;
+font-size:40px;
+letter-spacing:9px;
+}
+
+.tagline{
+font-size:10px;
+letter-spacing:4px;
+color:#a18a6a;
+margin-top:9px;
+}
+
+.hero{
+text-align:center;
+padding:55px 15px 25px;
+}
+
+.hero h1{
+font-family:Georgia,serif;
+font-weight:normal;
+font-size:34px;
+margin:0 0 12px;
+}
+
+.hero p{
+color:#81786e;
+font-size:14px;
+}
+
+.tabs{
+display:flex;
+justify-content:center;
+gap:12px;
+padding:25px 15px 35px;
+flex-wrap:wrap;
+}
+
+.tab{
+padding:13px 32px;
+border:1px solid #b99a72;
+background:transparent;
+color:#29251f;
+cursor:pointer;
+letter-spacing:2px;
+font-size:12px;
+transition:.2s;
+}
+
+.tab.active,.tab:hover{
+background:#29251f;
+color:white;
+}
+
+.section-title{
+text-align:center;
+font-family:Georgia,serif;
+font-size:25px;
+font-weight:normal;
+margin:0 0 10px;
+}
+
+.section-subtitle{
+text-align:center;
+color:#928779;
+font-size:12px;
+letter-spacing:1px;
+margin-bottom:25px;
+}
+
+.products{
+display:grid;
+grid-template-columns:repeat(3,minmax(0,1fr));
+gap:22px;
+max-width:1150px;
+margin:auto;
+padding:10px 22px 50px;
+}
+
+.card{
+background:#fff;
+border:1px solid #eee7de;
+padding:13px;
+transition:.25s;
+}
+
+.card:hover{
+transform:translateY(-4px);
+box-shadow:0 12px 28px #00000012;
+}
+
+.image-wrap{
+background:#f7f5f1;
+overflow:hidden;
+}
+
+.card img{
+width:100%;
+aspect-ratio:1/1;
+object-fit:contain;
+display:block;
+}
+
+.name{
+font-family:Georgia,serif;
+font-size:17px;
+margin:16px 0 9px;
+}
+
+.old{
+color:#999;
+text-decoration:line-through;
+font-size:13px;
+}
+
+.price{
+font-size:21px;
+font-weight:bold;
+margin:6px 0 15px;
+}
+
+.order{
+display:block;
+text-align:center;
+background:#29251f;
+color:white;
+text-decoration:none;
+padding:13px 8px;
+font-size:11px;
+letter-spacing:1.5px;
+transition:.2s;
+}
+
+.order:hover{
+background:#a18a6a;
+}
+
+.hidden{
+display:none;
+}
+
+footer{
+background:#29251f;
+color:#e9dfd1;
+text-align:center;
+padding:38px 15px;
+font-size:12px;
+letter-spacing:1px;
+line-height:2;
+}
+
+@media(max-width:700px){
+.logo{font-size:32px}
+.hero{padding-top:38px}
+.hero h1{font-size:27px}
+.products{
+grid-template-columns:repeat(2,minmax(0,1fr));
+gap:11px;
+padding:10px 10px 35px;
+}
+.card{padding:8px}
+.name{font-size:14px}
+.price{font-size:18px}
+.order{font-size:10px;padding:11px 5px}
+.tab{padding:12px 23px}
+}
+
+@media(max-width:360px){
+.products{grid-template-columns:1fr}
+}
 </style>
 </head>
+
 <body>
 
 <header>
@@ -38,87 +209,162 @@ footer{text-align:center;padding:35px 15px;color:#81786e;font-size:12px}
 <p>Thoughtfully selected essentials for your everyday elegance.</p>
 </section>
 
+<div class="tabs">
+<button class="tab active" onclick="showCategory('bedsheets',this)">
+BEDSHEETS
+</button>
+
+<button class="tab" onclick="showCategory('bags',this)">
+BAGS
+</button>
+</div>
+
+<h2 class="section-title" id="sectionTitle">The Bedsheet Collection</h2>
+<div class="section-subtitle">A TOUCH OF COMFORT & ELEGANCE</div>
+
 <main class="products">
 
-<div class="card">
-<img src="reversible-bedsheet.jpg" alt="Avielle Reversible Premium Bedsheet">
+<!-- BEDSHEETS -->
+
+<div class="card bedsheets">
+<div class="image-wrap">
+<img src="reversible-bedsheet.jpg" alt="Reversible Premium Bedsheet">
+</div>
 <div class="name">Avielle Reversible Premium Bedsheets</div>
-<div class="old">₹3,599</div><div class="price">₹1,299</div>
+<div class="old">₹3,599</div>
+<div class="price">₹1,299</div>
 <a class="order" href="https://wa.me/918920973237?text=Hi%20AVIELLE%2C%20I%20want%20to%20order%20Reversible%20Premium%20Bedsheets" target="_blank">ORDER ON WHATSAPP</a>
 </div>
 
-<div class="card">
-<img src="reversible-bedsheet.jpg" alt="Avielle He and She Bedsheet">
+<div class="card bedsheets">
+<div class="image-wrap">
+<img src="reversible-bedsheet.jpg" alt="He and She Bedsheet">
+</div>
 <div class="name">Avielle He &amp; She Reversible Premium Bedsheets</div>
-<div class="old">₹3,599</div><div class="price">₹1,299</div>
+<div class="old">₹3,599</div>
+<div class="price">₹1,299</div>
 <a class="order" href="https://wa.me/918920973237?text=Hi%20AVIELLE%2C%20I%20want%20to%20order%20He%20and%20She%20Bedsheets" target="_blank">ORDER ON WHATSAPP</a>
 </div>
 
-<div class="card">
-<img src="reversible-bedsheet.jpg" alt="Avielle Elite King Bedsheet">
+<div class="card bedsheets">
+<div class="image-wrap">
+<img src="reversible-bedsheet.jpg" alt="Elite King Bedsheet">
+</div>
 <div class="name">Avielle Elite King Bedsheets</div>
-<div class="old">₹4,399</div><div class="price">₹849</div>
+<div class="old">₹4,399</div>
+<div class="price">₹849</div>
 <a class="order" href="https://wa.me/918920973237?text=Hi%20AVIELLE%2C%20I%20want%20to%20order%20Elite%20King%20Bedsheets" target="_blank">ORDER ON WHATSAPP</a>
 </div>
 
-<div class="card">
-<img src="reversible-bedsheet.jpg" alt="Avielle Velora Bedsheet Set">
+<div class="card bedsheets">
+<div class="image-wrap">
+<img src="reversible-bedsheet.jpg" alt="Velora Bedsheet Set">
+</div>
 <div class="name">Avielle Velora 3pcs Bedsheet Set</div>
-<div class="old">₹4,999</div><div class="price">₹1,299</div>
+<div class="old">₹4,999</div>
+<div class="price">₹1,299</div>
 <a class="order" href="https://wa.me/918920973237?text=Hi%20AVIELLE%2C%20I%20want%20to%20order%20Velora%203pcs%20Bedsheet%20Set" target="_blank">ORDER ON WHATSAPP</a>
 </div>
 
-<div class="card">
+<!-- BAGS -->
+
+<div class="card bags hidden">
+<div class="image-wrap">
 <img src="item-1-1.png" alt="Korean Crescent Moon Bag">
+</div>
 <div class="name">Korean Crescent Moon Bag</div>
-<div class="old">₹999</div><div class="price">₹459</div>
+<div class="old">₹999</div>
+<div class="price">₹459</div>
 <a class="order" href="https://wa.me/918920973237?text=Hi%20AVIELLE%2C%20I%20want%20Korean%20Crescent%20Moon%20Bag" target="_blank">ORDER ON WHATSAPP</a>
 </div>
 
-<div class="card">
+<div class="card bags hidden">
+<div class="image-wrap">
 <img src="item-2-1.png" alt="Cocoa Charm Bag">
+</div>
 <div class="name">Cocoa Charm Bag</div>
-<div class="old">₹1,799</div><div class="price">₹899</div>
+<div class="old">₹1,799</div>
+<div class="price">₹899</div>
 <a class="order" href="https://wa.me/918920973237?text=Hi%20AVIELLE%2C%20I%20want%20Cocoa%20Charm%20Bag" target="_blank">ORDER ON WHATSAPP</a>
 </div>
 
-<div class="card">
+<div class="card bags hidden">
+<div class="image-wrap">
 <img src="item-3-1.png" alt="Monochrome Diamond Bag">
+</div>
 <div class="name">Monochrome Diamond Bag</div>
-<div class="old">₹1,799</div><div class="price">₹1,099</div>
+<div class="old">₹1,799</div>
+<div class="price">₹1,099</div>
 <a class="order" href="https://wa.me/918920973237?text=Hi%20AVIELLE%2C%20I%20want%20Monochrome%20Diamond%20Bag" target="_blank">ORDER ON WHATSAPP</a>
 </div>
 
-<div class="card">
+<div class="card bags hidden">
+<div class="image-wrap">
 <img src="item-4-1.png" alt="Terra Cotta Tote Bag">
+</div>
 <div class="name">Terra Cotta Tote Bag</div>
-<div class="old">₹1,599</div><div class="price">₹1,150</div>
+<div class="old">₹1,599</div>
+<div class="price">₹1,150</div>
 <a class="order" href="https://wa.me/918920973237?text=Hi%20AVIELLE%2C%20I%20want%20Terra%20Cotta%20Tote%20Bag" target="_blank">ORDER ON WHATSAPP</a>
 </div>
 
-<div class="card">
+<div class="card bags hidden">
+<div class="image-wrap">
 <img src="item-5-1.png" alt="Checkered Cross Body Box Bag">
+</div>
 <div class="name">Checkered Cross Body Box Bag</div>
-<div class="old">₹1,599</div><div class="price">₹850</div>
+<div class="old">₹1,599</div>
+<div class="price">₹850</div>
 <a class="order" href="https://wa.me/918920973237?text=Hi%20AVIELLE%2C%20I%20want%20Checkered%20Cross%20Body%20Box%20Bag" target="_blank">ORDER ON WHATSAPP</a>
 </div>
 
-<div class="card">
+<div class="card bags hidden">
+<div class="image-wrap">
 <img src="item-6-1.png" alt="Studded Bag">
+</div>
 <div class="name">Studded Bag</div>
-<div class="old">₹1,499</div><div class="price">₹950</div>
+<div class="old">₹1,499</div>
+<div class="price">₹950</div>
 <a class="order" href="https://wa.me/918920973237?text=Hi%20AVIELLE%2C%20I%20want%20Studded%20Bag" target="_blank">ORDER ON WHATSAPP</a>
 </div>
 
-<div class="card">
+<div class="card bags hidden">
+<div class="image-wrap">
 <img src="item-7-1.png" alt="Vintage Floral Embossed Handbag">
+</div>
 <div class="name">Vintage Floral Embossed Handbag</div>
-<div class="old">₹1,999</div><div class="price">₹1,599</div>
+<div class="old">₹1,999</div>
+<div class="price">₹1,599</div>
 <a class="order" href="https://wa.me/918920973237?text=Hi%20AVIELLE%2C%20I%20want%20Vintage%20Floral%20Embossed%20Handbag" target="_blank">ORDER ON WHATSAPP</a>
 </div>
 
 </main>
 
-<footer>AVIELLE — Elegance in Every Detail<br><br>For orders and assistance, connect with us on WhatsApp.</footer>
+<footer>
+AVIELLE — ELEGANCE IN EVERY DETAIL<br>
+For orders and assistance, connect with us on WhatsApp.
+</footer>
+
+<script>
+function showCategory(category,button){
+document.querySelectorAll('.card').forEach(card=>{
+card.classList.toggle('hidden',!card.classList.contains(category));
+});
+
+document.querySelectorAll('.tab').forEach(tab=>{
+tab.classList.remove('active');
+});
+
+button.classList.add('active');
+
+document.getElementById('sectionTitle').textContent =
+category==='bedsheets'
+? 'The Bedsheet Collection'
+: 'The Handbag Collection';
+
+window.scrollTo({top:0,behavior:'smooth'});
+}
+</script>
+
 </body>
 </html>
